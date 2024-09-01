@@ -1,0 +1,58 @@
+create database Health_Monitoring;
+
+use Health_Monitoring;
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL auto_increment,
+  `username` text NOT NULL,
+  `password` text NOT NULL,
+  PRIMARY KEY  (`id`)
+);
+
+
+insert into admin values('admin','admin');
+
+
+CREATE TABLE `req_res` (
+  `id` int(11) NOT NULL auto_increment,
+  `requestfrom` text,
+  `requestto` text,
+  `status` text,
+  `dt` text,
+  PRIMARY KEY  (`id`)
+);
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL auto_increment,
+  `username` text,
+  `password` text,
+  `email` text,
+  `mobile` text,
+  `dob` text,
+  `gender` text,
+  `address` text,
+  `location` text,
+  `bgroup` text,
+  `company` text,
+  `status` text,
+  `image` longblob,
+  PRIMARY KEY  (`id`)
+);
+
+CREATE TABLE `tweets` (
+  `id` int(11) NOT NULL auto_increment,
+  `tname` text,
+  `image` blob,
+  `description` text,
+  `date` text,
+  `rank` int(11) default NULL,
+  `user` text,
+  PRIMARY KEY  (`id`)
+);
+
+
+
+CREATE TABLE `filter` (
+  `fcat` text,
+  `filter` text
+);
